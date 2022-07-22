@@ -1,5 +1,7 @@
 import 'dart:ui';
+
 import 'package:vector_math/vector_math_64.dart';
+
 import '../../animation/keyframe/base_keyframe_animation.dart';
 import '../../animation/keyframe/value_callback_keyframe_animation.dart';
 import '../../lottie_drawable.dart';
@@ -10,7 +12,7 @@ import 'base_layer.dart';
 import 'layer.dart';
 
 class ImageLayer extends BaseLayer {
-  final Paint paint = Paint();
+  final Paint paint = Paint()..filterQuality = FilterQuality.high;
   BaseKeyframeAnimation<ColorFilter, ColorFilter?>? _colorFilterAnimation;
 
   ImageLayer(LottieDrawable lottieDrawable, Layer layerModel)
